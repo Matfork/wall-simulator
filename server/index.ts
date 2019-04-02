@@ -12,7 +12,8 @@ const nextI18NextMiddleware = require('next-i18next/middleware');
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 
-const port = parseInt((process as any).env.PORT, 10) || 3000;
+const port = !!dev ? 3000 : parseInt((process as any).env.PORT, 10) || 5000;
+const host = !!dev ? 'localhost' : '0.0.0.0';
 const handle = app.getRequestHandler();
 
 let firebase: any = null;
@@ -72,9 +73,9 @@ try {
       return handle(req, res);
     });
 
-    server.listen(port, (err: any) => {
+    server.listen(port, host, (err: any) => {
       if (err) throw err;
-      console.log(`> Ready on http://localhost:${port}`);
+      console.log(`> Ready on http://${host}:${port}`);
     });
   });
 } catch ($e) {
