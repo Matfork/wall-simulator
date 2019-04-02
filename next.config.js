@@ -1,3 +1,7 @@
+require('dotenv').config();
+
+const path = require('path');
+const Dotenv = require('dotenv-webpack');
 const withTypescript = require('@zeit/next-typescript');
 const nextCssLoaders = require('./config/helper');
 
@@ -58,6 +62,14 @@ module.exports = withTypescript({
     if (cssLoaders.plugin['ant-theme']) {
       config.plugins.push(cssLoaders.plugin['ant-theme']);
     }
+
+    config.plugins.push(
+      // Read the .env file
+      new Dotenv({
+        path: path.join(__dirname, '.env'),
+        systemvars: true
+      })
+    );
 
     return config;
   }

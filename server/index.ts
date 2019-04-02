@@ -1,3 +1,4 @@
+require('dotenv').config();
 import express from 'express';
 import admin from 'firebase-admin';
 import next from 'next';
