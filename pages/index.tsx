@@ -4,7 +4,7 @@ import { AuthService } from '../src/app/shared/services/auth.service';
 import redirect from '../src/app/shared/utils/redirect';
 import { _C } from '../src/app/shared/utils/constants';
 
-class Index extends React.Component<WithNamespaces> {
+class Index extends React.Component {
   static async getInitialProps(ctx: any) {
     if (!AuthService.isAuth(ctx)) {
       redirect('/auth/login', ctx);
