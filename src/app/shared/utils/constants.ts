@@ -1,3 +1,4 @@
 export const _C = {
-  isBrowser: (process as any).browser
+  IS_BROWSER: (process as any).browser,
+  TOKEN_KEY: 'tid'
 };

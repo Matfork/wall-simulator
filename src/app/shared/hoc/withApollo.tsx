@@ -59,8 +59,7 @@ export default (App: any) => {
 
       // Run all GraphQL queries in the component tree
       // and extract the resulting data
-      if (_C.isBrowser) {
-        console.log('||||', apollo, composedInitialProps);
+      if (!_C.IS_BROWSER) {
         try {
           // Run all GraphQL queries
           await getDataFromTree(

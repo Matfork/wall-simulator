@@ -1,0 +1,14 @@
+.wall-page {
+  margin: 0 auto;
+  width: 500px;
+  background: #fff;
+  padding: 20px;
+  min-height: calc(100vh - 128px);
+}
+
+@media screen and (max-width: 991px) {
+  .wall-page {
+    margin: none;
+    width: 100%;
+  }
+}

@@ -1,0 +1,22 @@
+.post-component {
+  font-size: 0.8rem;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.45);
+  border-radius: 5px;
+  margin-bottom: 15px;
+
+  .p-content {
+    height: 80px;
+    overflow: auto;
+  }
+
+  .p-options {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+
+    a:first-child {
+      margin-right: 10px;
+    }
+  }
+}

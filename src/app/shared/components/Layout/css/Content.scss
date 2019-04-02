@@ -1,0 +1,19 @@
+.layout-content {
+  width: 100%;
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+
+  .content {
+    width: 1290px;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 1290px) {
+  .layout-content {
+    .content {
+      width: 100%;
+    }
+  }
+}

@@ -1,20 +1,24 @@
 {
   "compilerOptions": {
     "esModuleInterop": true,
+    "baseUrl": ".",
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "jsx": "preserve",
-    "lib": ["dom", "esnext.asynciterable", "es2018"],
+    "lib": ["dom", "esnext.asynciterable", "es2015", "es2016"],
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
     "preserveConstEnums": true,
     "removeComments": false,
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
-    "target": "esnext"
-  }
+    "target": "esnext",
+    "typeRoots": ["./node_modules/@types"],
+    "outDir": ".next"
+  },
+  "exclude": [".next", "server/**/*.*"]
 }

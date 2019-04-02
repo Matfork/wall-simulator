@@ -3,7 +3,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga';
 
 import rootReducer from './reducers';
-import sagas from './sagas';
+import rootSagas from './sagas';
 
 const bindMiddleware = (middleware: any) => {
   if (process.env.NODE_ENV !== 'production') {
@@ -20,7 +20,7 @@ const configureStore = (initialState = {}) => {
     bindMiddleware([sagaMiddleware])
   ) as any;
 
-  store.sagaTask = sagaMiddleware.run(sagas);
+  store.sagaTask = sagaMiddleware.run(rootSagas);
   return store;
 };
 

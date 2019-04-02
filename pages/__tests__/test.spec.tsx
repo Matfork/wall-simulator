@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import TestPage from '../test';
+import IndexPage from '../../pages.saga/index.1.';
 
 describe('Pages', () => {
   describe('Index', () => {
     it('should render without throwing an error', function() {
-      const wrap = mount(<TestPage />);
+      const wrap = mount(<IndexPage />);
       expect(wrap.find('div').text()).toBe('Hello Next.js');
     });
   });

@@ -1,29 +1,25 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { WithNamespaces } from 'react-i18next';
+import { AuthService } from '../src/app/shared/services/auth.service';
+import redirect from '../src/app/shared/utils/redirect';
+import { _C } from '../src/app/shared/utils/constants';
 
-
-import Page from '../src/app/modules/components/saga/Page';
-import { tickClock, loadData, startClock } from '../src/app/shared/redux/actions/test.action';
-
-class Index extends React.Component {
-  static async getInitialProps(props: any) {
-    const { store, isServer } = props.ctx;
-    store.dispatch(tickClock(isServer));
-
-    if (!store.getState().placeholderData) {
-      store.dispatch(loadData());
+class Index extends React.Component<WithNamespaces> {
+  static async getInitialProps(ctx: any) {
+    if (!AuthService.isAuth(ctx)) {
+      redirect('/auth/login', ctx);
+    } else {
+      redirect('/wall/main', ctx);
     }
 
-    return { isServer };
-  }
-
-  componentDidMount() {
-    (this.props as any).dispatch(startClock());
+    return {
+      namespacesRequired: []
+    };
   }
 
   render() {
-    return <Page title="Index Page" linkTo="/other" NavigateTo="Other Page" />;
+    return null;
   }
 }
 
-export default connect()(Index);
+export default Index;

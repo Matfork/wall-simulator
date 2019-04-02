@@ -37,7 +37,7 @@ module.exports = (config, options) => {
 
   const css = cssLoaderConfig(config, {
     extensions: ['css'],
-    cssModules: true,
+    cssModules: false,
     cssLoaderOptions: {
       importLoaders: 1,
       localIdentName: '[local]___[hash:base64:5]'
@@ -48,7 +48,7 @@ module.exports = (config, options) => {
 
   const sass = cssLoaderConfig(config, {
     extensions: ['scss', 'sass'],
-    cssModules: true,
+    cssModules: false,
     cssLoaderOptions: {
       importLoaders: 1,
       localIdentName: '[local]___[hash:base64:5]'
