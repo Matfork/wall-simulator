@@ -48,7 +48,8 @@
     "recompose": "^0.30.0",
     "redux": "^4.0.1",
     "redux-saga": "^1.0.2",
-    "yup": "^0.27.0"
+    "yup": "^0.27.0",
+    "antd-scss-theme-plugin": "^1.0.7"
   },
   "devDependencies": {
     "@types/cookie": "^0.3.2",
@@ -66,7 +67,6 @@
     "@types/recompose": "^0.30.5",
     "@types/styled-jsx": "^2.2.8",
     "@types/yup": "^0.26.12",
-    "antd-scss-theme-plugin": "^1.0.7",
     "babel-core": "^6.26.3",
     "babel-jest": "^24.5.0",
     "babel-plugin-import": "^1.11.0",
