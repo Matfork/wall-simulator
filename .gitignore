@@ -22,3 +22,6 @@ yarn-error.log*
 /pages.apollo
 /pages.saga
 .vscode/
+
+/config/credentials/client.ts
+/config/credentials/server.ts
