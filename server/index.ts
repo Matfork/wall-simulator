@@ -6,8 +6,8 @@ import bodyParser from 'body-parser';
 import session from 'express-session';
 import serverCreds from '../config/credentials/server';
 import nextI18next from '../src/i18n';
+import compression from 'compression';
 
-const compression = require('compression');
 const nextI18NextMiddleware = require('next-i18next/middleware');
 
 const dev = process.env.NODE_ENV !== 'production';
