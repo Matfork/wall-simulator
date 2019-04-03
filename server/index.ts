@@ -4,10 +4,10 @@ import admin from 'firebase-admin';
 import next from 'next';
 import bodyParser from 'body-parser';
 import session from 'express-session';
-import compression from 'compression';
 import serverCreds from '../config/credentials/server';
 import nextI18next from '../src/i18n';
 
+const compression = require('compression');
 const nextI18NextMiddleware = require('next-i18next/middleware');
 
 const dev = process.env.NODE_ENV !== 'production';
