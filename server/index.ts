@@ -4,6 +4,7 @@ import admin from 'firebase-admin';
 import next from 'next';
 import bodyParser from 'body-parser';
 import session from 'express-session';
+import compression from 'compression';
 import serverCreds from '../config/credentials/server';
 import nextI18next from '../src/i18n';
 
@@ -30,6 +31,8 @@ try {
 
   app.prepare().then(() => {
     const server = express();
+
+    server.use(compression());
 
     server.use(nextI18NextMiddleware(nextI18next));
     server.use(bodyParser.json());

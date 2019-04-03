@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import redirect from '../../src/app/shared/utils/redirect';
+import redirect, { redirectAs } from '../../src/app/shared/utils/redirect';
 import Head from '../../src/app/shared/components/NextHead/Head';
 import LoginFormComponent from '../../src/app/modules/components/auth/login.form';
 import { loginSchema } from '../../src/app/shared/utils/validation/auth/login.validation';
@@ -75,7 +75,7 @@ class Login extends Component<WithNamespaces> {
                 });
 
                 actions.setSubmitting(false);
-                return redirect('/wall/main');
+                return redirectAs({ url: '/wall/main', as: '/wall' });
               } catch ($e) {
                 this.setState({
                   apiError: $e.message
