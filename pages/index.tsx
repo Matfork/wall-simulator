@@ -1,15 +1,18 @@
 import React from 'react';
-import { WithNamespaces } from 'react-i18next';
 import { AuthService } from '../src/app/shared/services/auth.service';
-import redirect from '../src/app/shared/utils/redirect';
+import { redirectAs } from '../src/app/shared/utils/redirect';
 import { _C } from '../src/app/shared/utils/constants';
 
 class Index extends React.Component {
   static async getInitialProps(ctx: any) {
     if (!AuthService.isAuth(ctx)) {
-      redirect('/auth/login', ctx);
+      redirectAs(
+        //  { url: '/auth/login', as: '/login/server?title=theBest' },
+        { url: '/auth/login', as: '/login' },
+        ctx
+      );
     } else {
-      redirect('/wall/main', ctx);
+      redirectAs({ url: '/wall/main', as: '/wall' }, ctx);
     }
 
     return {

@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import redirect from '../../src/app/shared/utils/redirect';
 import Head from '../../src/app/shared/components/NextHead/Head';
 import LoginFormComponent from '../../src/app/modules/components/auth/login.form';
@@ -21,12 +21,16 @@ interface LoginState {
   apiError: null | string;
 }
 
-class Login extends PureComponent<WithNamespaces> {
+class Login extends Component<WithNamespaces> {
   static async getInitialProps(ctx: any) {
-    if (!_C.IS_BROWSER) {
-      if (AuthService.isAuth(ctx)) {
-        redirect('/', ctx);
-      }
+    // console.log(
+    //   'Login page',
+    //   _C.IS_BROWSER ? 'from client' : 'from server',
+    //   ctx.query
+    // );
+
+    if (AuthService.isAuth(ctx)) {
+      redirect('/', ctx);
     }
 
     return {

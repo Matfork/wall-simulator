@@ -4,7 +4,7 @@ import withReduxSaga from 'next-redux-saga';
 import App, { Container } from 'next/app';
 import configureStore from '../src/app/shared/redux/store';
 import { Provider } from 'react-redux';
-import { appWithTranslation } from './../src/i18n';
+import { appWithTranslation } from '../src/i18n';
 import { _C } from '../src/app/shared/utils/constants';
 
 class RootApp extends App {

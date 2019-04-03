@@ -44,30 +44,42 @@ try {
       })
     );
 
-    // server.use((req: any, _: any, next: any) => {
-    //   req.firebaseServer = firebase;
-    //   next();
+    server.use((req: any, _: any, next: any) => {
+      req.firebaseServer = firebase;
+      next();
+    });
+
+    server.get('/login/:id?', (req, res) => {
+      const actualPage = '/auth/login';
+      const queryParams = { ...req.params, ...req.query }; //e.g. { title: req.params.id}
+      app.render(req, res, actualPage, queryParams);
+    });
+
+    server.get('/wall', (req, res) => {
+      const actualPage = '/wall/main';
+      const queryParams = {};
+      app.render(req, res, actualPage, queryParams);
+    });
+
+    // server.post('/api/login', (req: any, res: any) => {
+    //   if (!req.body) return res.sendStatus(400);
+
+    //   const token = req.body.token;
+    //   firebase
+    //     .auth()
+    //     .verifyIdToken(token)
+    //     .then((decodedToken: any) => {
+    //       req.session.decodedToken = decodedToken;
+    //       return decodedToken;
+    //     })
+    //     .then((decodedToken: any) => res.json({ status: true, decodedToken }))
+    //     .catch((error: any) => res.json({ error }));
     // });
 
-    server.post('/api/login', (req: any, res: any) => {
-      if (!req.body) return res.sendStatus(400);
-
-      const token = req.body.token;
-      firebase
-        .auth()
-        .verifyIdToken(token)
-        .then((decodedToken: any) => {
-          req.session.decodedToken = decodedToken;
-          return decodedToken;
-        })
-        .then((decodedToken: any) => res.json({ status: true, decodedToken }))
-        .catch((error: any) => res.json({ error }));
-    });
-
-    server.post('/api/logout', (req: any, res: any) => {
-      req.session.decodedToken = null;
-      res.json({ status: true });
-    });
+    // server.post('/api/logout', (req: any, res: any) => {
+    //   req.session.decodedToken = null;
+    //   res.json({ status: true });
+    // });
 
     server.get('*', (req: any, res: any) => {
       return handle(req, res);
