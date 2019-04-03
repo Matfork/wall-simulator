@@ -5,6 +5,7 @@ import { Popconfirm } from 'antd';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { onPostDeleteRequest } from '../../../../shared/redux/actions/post.action';
+import 'react-quill/dist/quill.snow.css';
 import './css/Post.scss';
 
 interface PostProps {
@@ -24,7 +25,11 @@ const PostComponent: React.SFC<PostProps> = props => {
     <div className="post-component">
       {!editMode ? (
         <React.Fragment>
-          <div className="p-content">{post.content}</div>
+          {/* <div className="p-content">{post.content}</div> */}
+          <div
+            dangerouslySetInnerHTML={{ __html: post.content }}
+            className="p-content ql-editor"
+          />
           <div className="p-options">
             <a
               href="#"

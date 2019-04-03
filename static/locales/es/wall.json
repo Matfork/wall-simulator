@@ -1,1 +1,23 @@
-{}
+{
+  "create": {
+    "txtArea": {
+      "placeholder": "¿Qué esta pasando?",
+      "dynamic_placeholder": "¿Que estas pensando?, Recuerda que puedes pegar imagenes o usar el boton de la esquina"
+    },
+    "visibility": {
+      "options": {
+        "public": "Publico",
+        "friends": "Amigos"
+      }
+    },
+    "submit": "Publicar"
+  },
+  "edit": {
+    "txtArea": {
+      "placeholder": "Edite su post",
+      "dynamic_placeholder": "Edite su post, Recuerda que puedes pegar imagenes o usar el boton de la esquina"
+    },
+    "submit": "Guardar",
+    "cancel": "Cancelar"
+  }
+}

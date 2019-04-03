@@ -17,6 +17,10 @@ export class AuthService {
     return result;
   };
 
+  public static userDataListener = (func: any) => {
+    return firebase.auth().onAuthStateChanged(func);
+  };
+
   public static logout = async (): Promise<any> => {
     const result = await firebase.auth().signOut();
     jsCookie.remove(_C.TOKEN_KEY);

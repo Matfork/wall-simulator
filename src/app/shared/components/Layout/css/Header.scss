@@ -8,8 +8,14 @@
   .options {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     width: 100%;
     margin-right: 20px;
+
+    .user {
+      color: #fff;
+      margin-right: 20px;
+    }
 
     button {
       color: #fff;

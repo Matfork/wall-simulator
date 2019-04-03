@@ -6,8 +6,13 @@
   margin-bottom: 15px;
 
   .p-content {
-    height: 80px;
+    min-height: 80px;
+    max-height: 400px;
     overflow: auto;
+
+    &.ql-editor {
+      padding: 5px;
+    }
   }
 
   .p-options {

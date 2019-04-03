@@ -48,7 +48,6 @@ const PostListComponent: React.SFC<PostListProps> = props => {
           ))
         ) : (
           <div className="empty">
-            {' '}
             Aun no hay posts relacionados a {visibility}
           </div>
         )}

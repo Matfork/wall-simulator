@@ -8,6 +8,24 @@
     resize: none;
     width: 100%;
     margin-bottom: 10px;
+    height: 125px;
+
+    .ql-toolbar {
+      padding: 0;
+
+      .ql-formats {
+        display: flex;
+        justify-content: flex-end;
+        margin: 0;
+      }
+    }
+
+    .ql-container {
+      height: 100px;
+      .ql-editor {
+        padding: 5px;
+      }
+    }
   }
 
   .options {

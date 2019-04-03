@@ -1,1 +1,13 @@
-{}
+{
+  "txtArea": {
+    "placeholder": "¿What are you thinking about?",
+    "dynamic_placeholder": "¿What are you thinking about?, Remember you can paste images or use the top-right bottom to do so"
+  },
+  "visibility": {
+    "options": {
+      "public": "Public",
+      "friends": "Friends"
+    }
+  },
+  "submit": "Publish"
+}

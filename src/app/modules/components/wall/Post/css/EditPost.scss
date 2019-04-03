@@ -3,6 +3,24 @@
     resize: none;
     width: 100%;
     margin-bottom: 10px;
+
+    .ql-toolbar {
+      padding: 0;
+
+      .ql-formats {
+        display: flex;
+        justify-content: flex-end;
+        margin: 0;
+      }
+    }
+
+    .ql-container {
+      min-height: 100px;
+      max-height: 400px;
+      .ql-editor {
+        padding: 5px;
+      }
+    }
   }
 
   .options {
